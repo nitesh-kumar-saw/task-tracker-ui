@@ -1,0 +1,27 @@
+.menu-bar {
+  background-color: #007BFF; 
+  padding: 10px 20px;
+  color: #fff;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+
+    &.active {
+      border-bottom: 2px solid #fff;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
