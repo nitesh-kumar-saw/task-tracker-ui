@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ProjectSetupModule } from './features/project-setup/project-setup.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,11 @@ import { ToastrModule } from 'ngx-toastr';
     TasksModule,
     EmployeesModule,
     DashboardModule,
+    ProjectSetupModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,   // required
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',

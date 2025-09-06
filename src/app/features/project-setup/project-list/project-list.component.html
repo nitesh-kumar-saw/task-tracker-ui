@@ -1,0 +1,41 @@
+<app-loader [show]="isLoading"></app-loader>
+
+<div class="container mt-4" *ngIf="!isLoading">
+    <h2 class="mb-3">Project List</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Project Status</th>
+                    <th>Owner</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let project of projects">
+                    <td>{{ project.name }}</td>
+                    <td>{{ project.description }}</td>
+                    <td>{{project.start_date}}</td>
+                    <td>{{project.end_date}}</td>
+                    <td>
+                        <span class="badge" [ngClass]="{
+                    'bg-primary': project.is_project_done == true,                    
+                    'bg-secondary': project.is_project_done == false || project.is_project_done == null
+                  }">
+                            {{project.is_project_done == true ? 'Done' : 'Not Started' }}
+                        </span>
+                    </td>
+                    <td>{{project.owner}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-secondary me-2 mt-0 mb-0" type="button" (click)="onEditProject(project.id)">Edit</button>
+                        <!-- <button class="btn btn-sm btn-warning mt-0 mb-0">Delete</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

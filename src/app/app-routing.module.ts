@@ -4,12 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'tasks', loadChildren: () => import('./features/tasks/tasks.module').then(m => m.TasksModule) },
-  { path: 'employees', loadChildren: () => import('./features/employees/employees.module').then(m => m.EmployeesModule) },
+  { path: 'employees', loadChildren: () => import('./features/employees/employees.module').then(m => m.EmployeesModule) },  
+  {path: 'project-setup', loadChildren: ()=> import('./features/project-setup/project-setup.module').then(m => m.ProjectSetupModule)},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/dashboard' }
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

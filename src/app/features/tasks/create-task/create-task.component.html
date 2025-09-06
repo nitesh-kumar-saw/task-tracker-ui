@@ -1,7 +1,7 @@
 <app-loader [show]="isLoading"></app-loader>
 <div class="container mt-4" *ngIf = "!isLoading">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
+        <div class="col-12 col-md-8 col-lg-6  border border-secondary rounded p-4">
             <h3>Create New Task</h3>
             <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
                 <div class="mb-3">

@@ -1,0 +1,43 @@
+<app-loader [show]="isLoading"></app-loader>
+<div class="container mt-4" *ngIf="!isLoading">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6  border border-secondary rounded p-4">
+            <h3>Edit Project</h3>
+            <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name" [value]="project?.name"/>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" rows="3" formControlName="description" [value]="project?.description"></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label">Start Date</label>
+                        <input type="date" class="form-control" formControlName="start_date" [value]="project?.start_date"/>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label">End Date</label>
+                        <input type="date" class="form-control" formControlName="end_date" [value]="project?.end_date"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Owner</label>
+                    <input type="text" class="form-control" formControlName="owner" [value]="project?.owner"/>
+                </div>
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" type="checkbox"  id="flexCheckDefault"
+                        formControlName="is_project_done" [checked]="project?.is_project_done"/>
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Is Project Done?
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
