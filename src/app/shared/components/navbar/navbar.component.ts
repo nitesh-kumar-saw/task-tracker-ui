@@ -25,4 +25,12 @@ export class NavbarComponent {
     this.router.navigate(['/employees'])
   }
 
+  goToCreateProject():void{
+    this.router.navigate(['/project-setup/create'])
+  }
+
+  goToProjects():void{
+    this.router.navigate(['/project-setup/projects'])
+  }
+
 }
