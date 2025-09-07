@@ -40,7 +40,6 @@ export class EditProjectComponent {
     this._projectService.getProject(projectId).subscribe({
       next: (project) => {
         this.project = project;
-        console.log(this.project);
         this.projectForm.patchValue({
           id: project.id,
           name: project.name,

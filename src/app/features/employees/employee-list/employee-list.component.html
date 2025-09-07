@@ -1,0 +1,39 @@
+<app-loader [show]="isLoading"></app-loader>
+
+<div class="container mt-4" *ngIf="!isLoading">
+    <h2 class="mb-3">Employee List</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Project</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{ employee.first_name+' '+employee.last_name }}</td>
+                    <td>
+                        <span class="badge" [ngClass]="{
+                            'bg-primary': employee.is_active == true,                    
+                            'bg-secondary': employee.is_active == false || employee.is_active == null
+                        }">
+                            {{employee.is_active == true? 'Yes' : 'No' }}
+                        </span>
+                    </td>
+                    <td>
+                        <strong> {{ employee.project_name  }}</strong>
+
+                    </td>
+
+                    <td>
+                        <button class="btn btn-sm btn-secondary me-2 mt-0 mb-0" type="button">Edit</button>
+                        <!-- <button class="btn btn-sm btn-warning mt-0 mb-0">Delete</button> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
