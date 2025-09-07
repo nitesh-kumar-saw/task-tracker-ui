@@ -19,7 +19,7 @@
             aria-expanded="false">
             Project Setup
           </a>
-          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="projectDropdown" >
+          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="projectDropdown">
             <li>
               <a class="dropdown-item d-flex align-items-center gap-2" (click)="goToProjects()">
                 <i class="bi bi-card-checklist"></i> Project List
@@ -39,7 +39,7 @@
             aria-expanded="false">
             Tasks
           </a>
-          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="tasksDropdown" >
+          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="tasksDropdown">
             <li>
               <a class="dropdown-item d-flex align-items-center gap-2" (click)="goToTasks()">
                 <i class="bi bi-card-checklist"></i> Task List
@@ -52,11 +52,26 @@
             </li>
           </ul>
         </li>
-        
+
 
         <!-- Employees -->
-        <li class="nav-item">
-          <a class="nav-link" (click)="goToEmployee()">Employees</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="employeeDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Employee Setup
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="employeeDropdown">
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" (click)="goToEmployees()">
+                <i class="bi bi-card-checklist"></i> Employee List
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" (click)="goToCreateEmployee()">
+                <i class="bi bi-plus-circle"></i> Create Project
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

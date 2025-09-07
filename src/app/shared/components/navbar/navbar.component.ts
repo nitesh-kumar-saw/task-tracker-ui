@@ -21,8 +21,12 @@ export class NavbarComponent {
     this.router.navigate(['/dashboard'])
   }
 
-   goToEmployee():void{
+  goToEmployees():void{
     this.router.navigate(['/employees'])
+  }
+
+  goToCreateEmployee():void{
+    this.router.navigate(['/employees/create'])
   }
 
   goToCreateProject():void{
